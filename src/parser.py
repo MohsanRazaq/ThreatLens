@@ -6,7 +6,7 @@ LOG_PATTERN = re.compile(r'(\d+\.\d+\.\d+\.\d+).*?\s\[(.+?)\]\s"([A-Z]+)\s(.+?)\
 def parse_access_logs(file_path):
     """Reads raw server logs and groups them into an IP history database."""
     ip_database = defaultdict(list)
-    print('------Processing Server Logs------')
+    print('\n        Processing Server Logs')
     
     with open(file_path, 'r', errors='ignore', encoding='utf-8') as f:
         for line in f:

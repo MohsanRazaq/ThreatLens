@@ -1,5 +1,5 @@
 ACCESS_LOGS='data/access.log'
-LOG_PATH='logs'
+ALERT_LOG_FILE='logs'
 MAX_404_THRESHOLD = 20
 MAX_LOGIN_THRESHOLD = 30
 
