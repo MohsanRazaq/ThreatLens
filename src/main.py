@@ -54,7 +54,7 @@ def main():
     print(f"{'Active Perimeter Status':<28} | {CLR_GREEN}{'SECURE / CLEAN':<12}{CLR_RESET}")
     print(f"─" * 45 + CLR_RESET)
     
-    # Final Sign-off
+
     write_log(f'Log analysis completed. Scanned {total_ips_checked} IPs. No alerts triggered.')
     print(f"\n{CLR_GRAY}[i] Execution lifecycle finished. Exiting module runtime.{CLR_RESET}\n")
 

@@ -5,7 +5,7 @@ from constants import MAX_404_THRESHOLD, MAX_LOGIN_THRESHOLD
 TIME_PATTERN = "%d/%b/%Y:%H:%M:%S %z"
 
 def detect_vulnerability_scanners(ip, hits):
-    """Checks if an IP is hitting non-existent endpoints over a short window."""
+    #Checks if an IP is hitting non-existent endpoints over a short window
     # Strip any potential whitespace layout padding from your status codes
     errors_404_timestamp = [hit['timestamps'] for hit in hits if str(hit['status_code']).strip() == '404']
     
@@ -15,7 +15,7 @@ def detect_vulnerability_scanners(ip, hits):
         
         time_diff = last_404_time - first_404_time
         
-        # Catch instant automation spikes (where time_diff == 0)
+        # Catch instant automation spikes where time_diff == 0
         if time_diff <= 300:
             alert_msg = f'Block IP {ip}: Triggered {len(errors_404_timestamp)} "Not Found" errors [Vulnerability Scanner]'
             print(alert_msg)
@@ -24,7 +24,7 @@ def detect_vulnerability_scanners(ip, hits):
 
 def detect_brute_force(ip, hits):
     """Checks if an IP is hammering target endpoints with POST requests."""
-    # ADJUSTED: Added 'filter' and 'settings' to match your target parameters
+    # more broader scope area
     SUSPICIOUS_KEYWORDS = ['login', 'signin', 'updatevariation', 'settings', 'filter']
     
     login_attempts = sum(
